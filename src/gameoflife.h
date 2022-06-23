@@ -13,7 +13,7 @@
 #define DEAD 0
 #define ALIVE 1
 
-int readInput(int **field, char **argv);
+int getMatrixFromFile(int **field, char **argv);
 void drawField(int **field);
 void delay(int milliseconds);
 int **step(int **field);

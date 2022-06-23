@@ -10,7 +10,7 @@ int main(int argc, char *argv[]) {
   if (field) {
     if (argc != 3) {
       error = 1;
-    } else if (!readInput(field, argv)) {
+    } else if (!getMatrixFromFile(field, argv)) {
       error = 2;
     } else if (!freopen("/dev/tty", "r", stdin)) {
       error = 3;

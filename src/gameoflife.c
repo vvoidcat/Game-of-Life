@@ -1,6 +1,6 @@
 #include "gameoflife.h"
 
-int readInput(int **field, char **argv) {
+int getMatrixFromFile(int **field, char **argv) {
   int out = 1;
   int c = 0;
 
@@ -22,7 +22,6 @@ int readInput(int **field, char **argv) {
         }
       }
     }
-
     fclose(file);
   } else {
     out = 0;
