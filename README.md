@@ -9,6 +9,6 @@ to launch, use either:
 1) ```make launch```
 2) ```./gameoflife 1 maps/spaceship.txt```,  where
 
-    - "gameoflife" = name of the executable file
-    - "1" = can be replaced by any character(s); the matching characters will be found in a file and will represent the living cells at the start of the automaton
-    - "maps/spaceship.txt" = path to the file
+    - "gameoflife" = name of the executable
+    - "1" = can be replaced by any character(s); the matching characters will be found in the source file and will represent the living cells at the start of the automaton
+    - "maps/spaceship.txt" = path to the source file
