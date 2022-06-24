@@ -17,14 +17,14 @@ int main(int argc, char *argv[]) {
     }
 
     if (error == 0) {
-      drawField(field);
+      drawField(field, argv[2]);
       delay(speed);
 
       while (1) {
         field = step(field);
 
         if (field) {
-          drawField(field);
+          drawField(field, argv[2]);
           if (getInput(&speed)) {
             break;
           }

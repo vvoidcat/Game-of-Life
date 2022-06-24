@@ -1,5 +1,5 @@
 # Game-of-Life
-John Conway's Game of Life cellular automaton created in 1970, a recreation in C.
+John Conway's Game of Life cellular automaton, a recreation in C.
 
 to compile, use either:
 1) ```make```

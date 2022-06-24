@@ -13,12 +13,15 @@
 #define DEAD 0
 #define ALIVE 1
 
+#define COLOR_MAGENTA "\x1B[35m"
+#define COLOR_RESET "\033[0m"
+
 int getMatrixFromFile(int **field, char **argv);
-void drawField(int **field);
+void drawField(int **field, char *filename);
 void delay(int milliseconds);
 int **step(int **field);
 int countNeighbours(int **field, int x, int y);
-int getbytes();
+int getBytes();
 int getInput();
 
 int **allocateMem(int height, int width);

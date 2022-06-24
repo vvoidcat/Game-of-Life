@@ -30,12 +30,16 @@ int getMatrixFromFile(int **field, char **argv) {
   return out;
 }
 
-void drawField(int **field) {
-  system("clear");
-  printf("[w] = speed up; [s] = speed down; [q] = quit");
+void drawField(int **field, char *filename) {
+  printf("\e[H\e[2J\e[3J");
+  printf(" [w]" COLOR_MAGENTA " = speed up;" COLOR_RESET " [s]" COLOR_MAGENTA
+         " = speed down;" COLOR_RESET " [q]" COLOR_MAGENTA
+         " = quit\n" COLOR_RESET);
+  printf(COLOR_MAGENTA " source file:" COLOR_RESET " %s\n", filename);
   printf("\n\n\n\n");
 
   for (int i = 0; i < NHEIGHT; i++) {
+    printf("\t");
     for (int j = 0; j < NWIDTH; j++) {
       if (field[i][j] == ALIVE) {
         printf("#");
@@ -110,7 +114,7 @@ int **step(int **field) {
   return (error) ? NULL : field;
 }
 
-int getbytes() {
+int getBytes() {
   int out_bytes;
   ioctl(1, FIONREAD, &out_bytes);
   return out_bytes;
@@ -121,7 +125,7 @@ int getInput(int *speed) {
 
   system("/bin/stty raw");
 
-  if (getbytes() != 0) {
+  if (getBytes() != 0) {
     int c = getchar();
     if (c == 'w' || c == 'W') {
       if (*speed >= 150) {
