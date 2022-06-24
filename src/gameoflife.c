@@ -42,7 +42,7 @@ void drawField(int **field, char *filename) {
     printf("\t");
     for (int j = 0; j < NWIDTH; j++) {
       if (field[i][j] == ALIVE) {
-        printf("#");
+        printf("▄");
       } else {
         printf(" ");
       }
@@ -128,13 +128,13 @@ int getInput(int *speed) {
   if (getBytes() != 0) {
     int c = getchar();
     if (c == 'w' || c == 'W') {
-      if (*speed >= 150) {
-        *speed -= 300;
+      if (*speed >= 50) {
+        *speed -= 225;
       }
     }
     if (c == 's' || c == 'S') {
       if (*speed <= 1450) {
-        *speed += 300;
+        *speed += 225;
       }
     }
     if (c == 'q' || c == 'Q') {
