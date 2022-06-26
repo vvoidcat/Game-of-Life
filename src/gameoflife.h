@@ -16,6 +16,7 @@
 #define COLOR_MAGENTA "\x1B[35m"
 #define COLOR_RESET "\033[0m"
 
+#define NERRORS 4
 #define ERRORLIST                                                       \
   {"gameoflife: error[1]: usage: ./gameoflife [CHARACTERS] [FILENAME]", \
    "gameoflife: error[2]: invalid file",                                \

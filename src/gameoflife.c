@@ -184,7 +184,9 @@ void freeMem(int **pointer_array) {
 }
 
 void printError(int index) {
-  char errors[][300] = ERRORLIST;
-  fprintf(stderr, "%s", errors[index - 1]);
-  printf("\n");
+  if (index != 0 && index < NERRORS) {
+    char errors[][300] = ERRORLIST;
+    fprintf(stderr, "%s", errors[index - 1]);
+    fprintf(stderr, "\n");
+  }
 }
