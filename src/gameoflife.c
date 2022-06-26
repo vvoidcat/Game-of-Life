@@ -184,22 +184,7 @@ void freeMem(int **pointer_array) {
 }
 
 void printError(int index) {
-  switch (index) {
-    case 1:
-      fprintf(stderr,
-              "gameoflife: error[1]: usage: ./gameoflife [CHARACTERS] "
-              "[FILENAME]\n");
-      break;
-    case 2:
-      fprintf(stderr, "gameoflife: error[2]: invalid file\n");
-      break;
-    case 3:
-      fprintf(stderr, "gameoflife: error[3]: freopen() failure\n");
-      break;
-    case 4:
-      fprintf(stderr, "gameoflife: error[4]: memory allocation failure\n");
-      break;
-    default:
-      break;
-  }
+  char errors[][300] = ERRORLIST;
+  fprintf(stderr, "%s", errors[index - 1]);
+  printf("\n");
 }

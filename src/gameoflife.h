@@ -16,6 +16,12 @@
 #define COLOR_MAGENTA "\x1B[35m"
 #define COLOR_RESET "\033[0m"
 
+#define ERRORLIST                                                       \
+  {"gameoflife: error[1]: usage: ./gameoflife [CHARACTERS] [FILENAME]", \
+   "gameoflife: error[2]: invalid file",                                \
+   "gameoflife: error[3]: freopen() failure",                           \
+   "gameoflife: error[4]: memory allocation failure"};
+
 int getMatrixFromFile(int **field, char **argv);
 void drawField(int **field, char *filename);
 void delay(int milliseconds);
