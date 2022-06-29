@@ -78,7 +78,7 @@ int **step(int **field) {
   int **field_new = NULL;
   int error = 0;
 
-  field_new = allocateMem(NHEIGHT, NWIDTH);
+  field_new = allocatePointerArray(NWIDTH, NHEIGHT);
 
   if (field_new) {
     for (int i = 0; i < NHEIGHT; i++) {
@@ -110,7 +110,7 @@ int **step(int **field) {
     error = 1;
   }
 
-  freeMem(field_new);
+  freePointerArray(field_new, NHEIGHT);
   return (error) ? NULL : field;
 }
 
@@ -145,48 +145,4 @@ int getInput(int *speed) {
   system("/bin/stty cooked");
 
   return out;
-}
-
-int **allocateMem(int height, int width) {
-  int **result = NULL;
-  int error = 0;
-
-  result = malloc((height) * sizeof(int *));
-
-  if (result) {
-    for (int i = 0; i < height; i++) {
-      result[i] = malloc((width) * sizeof(int));
-      if (!result[i]) {
-        error = 1;
-        break;
-      }
-    }
-  } else {
-    error = 1;
-  }
-
-  if (error) {
-    freeMem(result);
-  }
-
-  return (error) ? NULL : result;
-}
-
-void freeMem(int **pointer_array) {
-  for (int i = 0; i < NHEIGHT; i++) {
-    if (pointer_array[i]) {
-      free(pointer_array[i]);
-    }
-  }
-  if (pointer_array) {
-    free(pointer_array);
-  }
-}
-
-void printError(int index) {
-  if (index != 0 && index < NERRORS) {
-    char errors[][300] = ERRORLIST;
-    fprintf(stderr, "%s", errors[index - 1]);
-    fprintf(stderr, "\n");
-  }
 }

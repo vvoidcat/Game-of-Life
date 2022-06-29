@@ -5,7 +5,7 @@ int main(int argc, char *argv[]) {
   int speed = 500;
   int error = 0;
 
-  field = allocateMem(NHEIGHT, NWIDTH);
+  field = allocatePointerArray(NWIDTH, NHEIGHT);
 
   if (field) {
     if (argc != 3) {
@@ -40,7 +40,7 @@ int main(int argc, char *argv[]) {
   }
 
   printError(error);
-  freeMem(field);
+  freePointerArray(field, NHEIGHT);
 
   return 0;
 }
