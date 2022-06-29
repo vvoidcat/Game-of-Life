@@ -4,10 +4,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define NERRORS 3
-#define ERRORLIST                         \
-  {"error[1]: memory allocation failure", \
-   "gameoflife: error[2]: freopen() failure", "Unknown error "};
+#define NERRORS 4
+#define ERRORLIST                                                       \
+  {"gameoflife: error[1]: usage: ./gameoflife [CHARACTERS] [FILENAME]", \
+   "gameoflife: error[2]: invalid file",                                \
+   "gameoflife: error[3]: freopen() failure",                           \
+   "gameoflife: error[4]: memory allocation failure"};
 
 int **allocatePointerArray(int size_x, int size_y);
 void freePointerArray(int **parray, int size_y);

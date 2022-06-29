@@ -57,6 +57,7 @@ void delay(int milliseconds) {
   milliseconds = milliseconds * 1000;
   clock_t start = clock();
   while (clock() < start + milliseconds) {
+    ;
   }
 }
 

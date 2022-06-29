@@ -1,11 +1,11 @@
 #ifndef SRC_GAMEOFLIFE_H_
 #define SRC_GAMEOFLIFE_H_
 
-#include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 #include <sys/ioctl.h>
 #include <time.h>
+
+#include "helper.h"
 
 #define NHEIGHT 25
 #define NWIDTH 80

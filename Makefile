@@ -4,8 +4,8 @@ CC = gcc -Wall -Werror -Wextra -std=c11
 
 all: cleanall build clean
 
-build: src/gameoflife_main.c src/gameoflife.c
-	$(CC) src/gameoflife_main.c src/gameoflife.c -o $(OUTNAME)
+build: src/gameoflife_main.c src/gameoflife.c src/helper.c
+	$(CC) src/gameoflife_main.c src/gameoflife.c src/helper.c -o $(OUTNAME)
 
 rebuild: cleanall build
 
