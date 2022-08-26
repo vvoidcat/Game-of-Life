@@ -1,4 +1,7 @@
 # Game-of-Life
+
+![gif](materials/gameoflife.gif) \
+
 John Conway's Game of Life cellular automaton, a recreation in C.
 
 to compile, use either:
