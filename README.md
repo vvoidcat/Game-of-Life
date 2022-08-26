@@ -1,6 +1,5 @@
 # Game-of-Life
-
-![gif](materials/gameoflife.gif) \
+<img src="misc/gameoflife.gif" width="550">
 
 John Conway's Game of Life cellular automaton, a recreation in C.
 
